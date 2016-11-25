@@ -40,4 +40,25 @@ on peut aller sur le lien https://www.startpage.com/ sur l'hote car c'est virtua
 ajout de 2 cartes reseau en NAT
 puis instalation du serveur openssh `sudo apt-get install ssh`
 - `sudo service ssh start`
+connexion sur le serveur par l'hote : `ssh -Y yvilatte@192.168.99.219`
+et en tant que root : `root@192.168.99.219's password: Permission denied, please try again.`
+modifiaction du fichier sshd_config dans /etc/ssh/sshd_config
+changement droit sur le fichier : `sudo chmod 777 /etc/ssh/sshd_config`
+puis changement du 22 en 26 : `vi /etc/ssh/sshd_config`
+echange de cle public : `ssh-keygen -t rsa`
+`ssh-copy-id -i ~/.ssh/id_rsa.pub  "yvilatte@192.168.99.219"`
+`ssh -p 26  yvilatte@192.168.99.219`
+`eval ssh-agent -s`
+`ssh-add`
+dans `vi /etc/network/interfaces`
+dans le fichier 
+    iface eth1 inet static
+    address 192.168.2.254
+    network 192.168.2.0
+    netmask 255.255.255.0
+    broadcast 192.168.2.255
+
+
+
+
 
