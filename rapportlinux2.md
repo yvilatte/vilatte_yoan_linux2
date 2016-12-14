@@ -46,6 +46,10 @@ modifiaction du fichier sshd_config dans /etc/ssh/sshd_config
 changement droit sur le fichier : `sudo chmod 777 /etc/ssh/sshd_config`
 puis changement du 22 en 26 : `vi /etc/ssh/sshd_config`
 echange de cle public : `ssh-keygen -t rsa`
+
+
+installation dhcp : `sudo apt-get install isc-dhcp-server`
+
 `ssh-copy-id -i ~/.ssh/id_rsa.pub  "yvilatte@192.168.99.219"`
 `ssh -p 26  yvilatte@192.168.99.219`
 `eval ssh-agent -s`
